@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Restoran Hotel</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 480px;
+      margin-top: 20px;
+    }
+
+    form label {
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1.5px solid #ccc;
+      outline: none;
+      font-size: 1rem;
+      resize: vertical;
+      background-color: #fff;
+      color: #333;
+      box-shadow: none;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    form input[type="text"]:focus,
+    form input[type="email"]:focus,
+    form textarea:focus {
+      border-color: #ffd700;
+      box-shadow: 0 0 8px #ffd700;
+      background-color: #fff;
+      color: #333;
+    }
+
+    form button {
+      cursor: pointer;
+      background-color: #ffd700;
+      border: none;
+      color: #0a1a2b;
+      padding: 12px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 0 15px #ffaa00;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #ffbc00;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Slideshow -->
+  <div class="slideshow-container">
+    <div class="slide active" style="background-image: url('image/slide1.jpg');"></div>
+    <div class="slide" style="background-image: url('image/slide2.jpg');"></div>
+    <div class="slide" style="background-image: url('image/slide3.jpg');"></div>
+  </div>
+
+  <div class="content-wrapper">
+    <header>
+      <h1>Kontak</h1>
+    </header>
+
+    <!-- Navigasi Glass -->
+    <nav class="glass-box">
+      <div class="dropdown">
+        <a href="#">Tentang Kami</a>
+        <div class="dropdown-content">
+          <a href="profil.html">Profil Hotel</a>
+          <a href="restoran.html">Restoran</a>
+          <a href="fasilitas.html">Fasilitas</a>
+          <a href="kontak.html">Kontak</a>
+        </div>
+      </div>
+      <a href="kamar.html">Kamar</a>
+      <a href="meeting.html">Meetings/Event</a>
+      <a href="lokasi.html">Lokasi</a>
+      <a href="programer.html">Profil Programer</a>
+    </nav>
+
+    <main class="container">
+      <!-- Slideshow for Contact Section -->
+      <div class="slideshow-kontak">
+        <div class="slide-kontak" style="background-image: url('image/kontak1.jpg');"></div>
+        <div class="slide-kontak" style="background-image: url('image/kontak2.jpg');"></div>
+        <div class="slide-kontak" style="background-image: url('image/kontak3.jpg');"></div>
+      </div>
+
+      <div class="glass-box">
+        <h2>Hubungi Kami</h2>
+        <p>Alamat: Jl. Bahagia No.123, Jakarta</p>
+        <p>Telepon: (+62) 82370165527</p>
+        <p>Email: info@hoteldamaisejahtera.com</p>
+        
+        <form onsubmit="alert('Terima kasih! Pesan Anda sudah kami terima.'); return false;">
+          <label for="name">Nama:</label>
+          <input type="text" id="name" required />
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" required />
+          
+          <label for="message">Pesan:</label>
+          <textarea id="message" rows="4" required></textarea>
+          
+          <button type="submit">Kirim Pesan</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    &copy; 2025 Hotel Damai Sejahtera by Henra Simamora
+  </footer>
+</body>
+</html>
+

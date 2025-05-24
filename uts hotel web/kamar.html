@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kamar Hotel</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .facility-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px; /* Space between images */
+      margin-bottom: 15px; /* Space below the gallery */
+    }
+
+    .facility-gallery img {
+      width: 100%; /* Make images responsive */
+      max-width: 3000px; /* Set a maximum width for images */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+      object-fit: cover; /* Ensure images cover their container */
+    }
+
+    .room {
+      margin-bottom: 30px; /* Space between room sections */
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.15); /* Transparent white background */
+      border-radius: 10px; /* Rounded corners */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+      color: #fff; /* Text color white for contrast */
+    }
+
+    button {
+      background-color: #ffd700; /* Button color */
+      border: none;
+      color: #0a1a2b;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #ffbc00; /* Button hover color */
+    }
+
+    header h1, .room h2, .room p, button {
+      color: #fff; /* Ensure headings, paragraphs and buttons text are white for readability */
+      text-shadow: 0 0 4px rgba(0,0,0,0.7);
+    }
+
+    /* Make sure the content-wrapper and main have no solid backgrounds that override transparency */
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+    }
+
+    nav {
+      margin-bottom: 20px;
+    }
+
+    nav a, nav .dropdown > a {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow-container">
+    <div class="slide active" style="background-image: url('image/slide1.jpg');"></div>
+    <div class="slide" style="background-image: url('image/slide2.jpg');"></div>
+    <div class="slide" style="background-image: url('image/slide3.jpg');"></div>
+  </div>
+
+  <div class="content-wrapper">
+    <header>
+      <h1>Daftar Kamar</h1>
+    </header>
+
+    <nav>
+      <div class="dropdown">
+        <a href="#">Tentang Kami</a>
+        <div class="dropdown-content">
+          <a href="profil.html">Profil Hotel</a>
+          <a href="restoran.html">Restoran</a>
+          <a href="fasilitas.html">Fasilitas</a>
+          <a href="kontak.html">Kontak</a>
+        </div>
+      </div>
+      <a href="kamar.html">Kamar</a>
+      <a href="meeting.html">Meetings/Event</a>
+      <a href="lokasi.html">Lokasi</a>
+      <a href="programer.html">Profil Programer</a>
+    </nav>
+
+    <main class="glass-box">
+      <div class="room">
+        <h2>Standard Room</h2>
+        <p>Nyaman dan bersih. Cocok untuk satu atau dua orang.</p>
+        <p><strong>Harga: Rp300.000/malam</strong></p>
+        <div class="facility-gallery">
+          <img src="image/kamar1.jpg" alt="Standard Room 1" />
+          <img src="image/kamar11.jpg" alt="Standard Room 2" />
+        </div>
+        <button onclick="location.href='booking.html?room=standard'">Pesan</button>
+      </div>
+
+      <div class="room">
+        <h2>Deluxe Room</h2>
+        <p>Dilengkapi balkon dan pemandangan taman.</p>
+        <p><strong>Harga: Rp500.000/malam</strong></p>
+        <div class="facility-gallery">
+          <img src="image/kamar2.jpg" alt="Deluxe Room 1" />
+          <img src="image/kamar22.jpg" alt="Deluxe Room 2" />
+        </div>
+        <button onclick="location.href='booking.html?room=deluxe'">Pesan</button>
+      </div>
+
+      <div class="room">
+        <h2>Suite Room</h2>
+        <p>Mewah dan luas, cocok untuk keluarga atau pasangan bulan madu.</p>
+        <p><strong>Harga: Rp900.000/malam</strong></p>
+        <div class="facility-gallery">
+          <img src="image/kamar3.jpg" alt="Suite Room 1" />
+          <img src="image/kamar33.jpg" alt="Suite Room 2" />
+        </div>
+        <button onclick="location.href='booking.html?room=suite'">Pesan</button>
+      </div>
+    </main>
+
+    <footer>
+      &copy; 2025 Hotel Damai Sejahtera by Henra Simamora
+    </footer>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    setInterval(nextSlide, 5000); // Adjust slide interval
+  </script>
+</body>
+</html>
+

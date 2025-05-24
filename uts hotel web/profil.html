@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profil Hotel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Slideshow Background -->
+  <div class="slideshow-container">
+    <div class="slide active" style="background-image: url('image/profil1.jpg');"></div>
+    <div class="slide" style="background-image: url('image/profil2.jpg');"></div>
+  </div>
+
+  <!-- Konten -->
+  <div class="content-wrapper">
+    <header>
+      <h1>Profil Hotel</h1>
+    </header>
+
+    <!-- Navigasi Dropdown -->
+    <nav>
+      <div class="dropdown">
+        <a href="#">Tentang Kami</a>
+        <div class="dropdown-content">
+          <a href="profil.html">Profil Hotel</a>
+          <a href="restoran.html">Restoran</a>
+          <a href="fasilitas.html">Fasilitas</a>
+          <a href="kontak.html">Kontak</a>
+        </div>
+      </div>
+      <a href="kamar.html">Kamar</a>
+      <a href="meeting.html">Meetings/Event</a>
+      <a href="lokasi.html">Lokasi</a>
+      <a href="programer.html">Profil Programer</a>
+    </nav>
+
+    <!-- Isi Utama -->
+    <main class="glass-box">
+      <h2>Hotel Damai Sejahtera</h2>
+      <p>Penat dengan kebisingan kota dan banyaknya pekerjaan? Hilangkan stressmu sejenak dengan suasana alam yang jauh dari kehidupan kota. Rasakan ketenangan dan keindahan alam di villa kami.</p>
+      <img src="image/profil1.jpg" alt="Profil Hotel" style="width:100%; border-radius:10px; margin-top:15px;" />
+      <img src="image/profil2.jpg" alt="Profil Hotel" style="width:100%; border-radius:10px; margin-top:15px;" />
+      <img src="image/profil3.jpg" alt="Profil Hotel" style="width:100%; border-radius:10px; margin-top:15px;" />
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2025 Hotel Damai Sejahtera by Henra Simamora
+    </footer>
+  </div>
+
+  <!-- Script Slideshow -->
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    function showSlides() {
+      slides.forEach((s, i) => s.classList.toggle('active', i === slideIndex));
+      slideIndex = (slideIndex + 1) % slides.length;
+    }
+    setInterval(showSlides, 4000);
+  </script>
+</body>
+</html>

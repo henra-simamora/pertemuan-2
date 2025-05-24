@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fasilitas Hotel</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .glass-box {
+      background-color: rgba(255, 255, 255, 0.15); /* Transparent background */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      color: #fff; /* Text color white for contrast */
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: none; /* Remove default list styling */
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 15px; /* Space between list items */
+      font-size: 1.2rem; /* Font size for facility names */
+    }
+
+    .facility-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px; /* Space between images */
+      justify-content: center; /* Center images */
+      margin-top: 10px; /* Space above images */
+    }
+
+    .facility-gallery img {
+      width: 100%; /* Make images responsive */
+      max-width: 2000px; /* Set a maximum width for images */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+      object-fit: cover; /* Ensure images cover their container */
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 200px;
+      color: #fff; /* Footer text color */
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow-container">
+    <div class="slide active" style="background-image: url('image/slide1.jpg');"></div>
+    <div class="slide" style="background-image: url('image/slide2.jpg');"></div>
+    <div class="slide" style="background-image: url('image/slide3.jpg');"></div>
+  </div>
+
+  <div class="content-wrapper">
+    <header>
+      <h1>Fasilitas Hotel</h1>
+    </header>
+
+    <nav>
+      <div class="dropdown">
+        <a href="#">Tentang Kami</a>
+        <div class="dropdown-content">
+          <a href="profil.html">Profil Hotel</a>
+          <a href="restoran.html">Restoran</a>
+          <a href="fasilitas.html">Fasilitas</a>
+          <a href="kontak.html">Kontak</a>
+        </div>
+      </div>
+      <a href="kamar.html">Kamar</a>
+      <a href="meeting.html">Meetings/Event</a>
+      <a href="lokasi.html">Lokasi</a>
+      <a href="programer.html">Profil Programer</a>
+    </nav>
+
+    <main class="glass-box">
+      <h2>Fasilitas Kami</h2>
+      <ul>
+        <li>Kolam Renang Outdoor</li>
+        <div class="facility-gallery">
+          <img src="image/kolam.jpg" alt="Kolam Renang" />
+        </div>
+        <li>Gym dan Pusat Kebugaran</li>
+        <div class="facility-gallery">
+          <img src="image/gym.jpg" alt="Gym" />
+          <img src="image/kebugaran.jpg" alt="Pusat Kebugaran" />
+        </div>
+        <li>Wi-Fi Gratis di Seluruh Area</li>
+        <div class="facility-gallery">
+          <img src="image/wifi.jpg" alt="Wi-Fi Gratis" />
+        </div>
+        <li>Ruang Meeting dan Event</li>
+        <div class="facility-gallery">
+          <img src="image/meeting.jpg" alt="Ruang Meeting" />
+          <img src="image/event.jpg" alt="Ruang Event" />
+        </div>
+        <li>Parkir Gratis</li>
+        <div class="facility-gallery">
+          <img src="image/parkir.jpg" alt="Area Parkir" />
+        </div>
+      </ul>
+    </main>
+
+    <footer>
+      &copy; 2025 Hotel Damai Sejahtera by Henra Simamora
+    </footer>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    setInterval(nextSlide, 5000);
+  </script>
+</body>
+</html>

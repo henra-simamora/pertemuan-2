@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profil Programer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Slideshow Background -->
+  <div class="slideshow-container">
+    <div class="slide active" style="background-image: url('image/slide1.jpg');"></div>
+    <div class="slide" style="background-image: url('image/slide2.jpg');"></div>
+    <div class="slide" style="background-image: url('image/slide3.jpg');"></div>
+  </div>
+
+  <!-- Konten Utama -->
+  <div class="content-wrapper">  
+    <header>
+      <h1>Profil Programer</h1>
+    </header>
+
+    <nav>
+      <div class="dropdown">
+        <a href="#">Tentang Kami ▼</a>
+        <div class="dropdown-content">
+          <a href="profil.html">Profil Hotel</a>
+          <a href="restoran.html">Restoran</a>
+          <a href="fasilitas.html">Fasilitas</a>
+          <a href="kontak.html">Kontak</a>
+        </div>
+      </div>
+      <a href="kamar.html">Kamar</a>
+      <a href="meeting.html">Meetings/Event</a>
+      <a href="lokasi.html">Lokasi</a>
+      <a href="programer.html">Profil Programer</a>
+    </nav>
+
+    <main class="glass-box" style="text-align: center;">
+      <img src="image/programer.jpg" alt="programer" class="profile-img" />
+
+      <h2>Data Diri</h2>
+      <p><strong>Nama:</strong> Henra Simamora</p>
+      <p><strong>Asal:</strong> Doloksanggul</p>
+      <p><strong>Email:</strong> simamora123456@gmail.com</p>
+      <p><strong>No. WA:</strong> (+62) 82370165527</p>
+
+      <h2>Deskripsi Diri</h2>
+      <p>Saya adalah mahasiswa Teknik Informatika dari Universitas Putera Batam. Website ini saya buat sebagai media pembelajaran dan latihan membuat desain UI yang menarik.</p>
+
+      <h2>Motto Hidup</h2>
+      <blockquote>"Belajar bukan untuk sekadar tahu, tapi untuk bertumbuh."</blockquote>
+    </main>
+
+    <footer>
+      &copy; 2025 Hotel Damai Sejahtera by Henra Simamora
+    </footer>
+  </div>
+
+  <!-- Slideshow Script -->
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlides() {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+      });
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add("active");
+    }
+
+    setInterval(showSlides, 5000);
+  </script>
+
+</body>
+</html>
